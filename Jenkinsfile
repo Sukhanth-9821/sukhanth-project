@@ -1,6 +1,9 @@
 pipeline{
     agent any
-    stages
+    tools {
+        terraform 'Terraform-11'
+    }
+    stages{
         stage("Code from SCM"){
             steps{
                 git branch: 'development', url: 'https://github.com/Sukhanth-9821/sukhanth-project.git'
@@ -16,4 +19,5 @@ pipeline{
                 sh 'terraform apply --auto-approve'
             }
         }
+    }
 }
