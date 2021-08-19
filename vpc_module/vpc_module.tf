@@ -6,5 +6,5 @@ resource "aws_vpc" "awsvpc" {
 }
 
 output "vpc_id"{
-    value="aws_vpc.awsvpc.id"
+    value="${aws_vpc.awsvpc.id}"
 }
