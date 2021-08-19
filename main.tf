@@ -2,10 +2,15 @@ provider "aws" {
     region="ap-south-1"
 }
 
-resource "aws_vpc" "awsvpc" {
-    cidr_block= "108.0.0.0/16"
-    tags={
-        Name="VPC"
-    }  
+module "vpc_module" {
+    source = "./vpc_module"
+    
 }
+
+module "network_module" {
+    vpc_id="${module.vpc_module.vpc_id}"
+    source = "./network_module"
+    
+}
+
 
