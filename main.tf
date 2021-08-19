@@ -5,6 +5,7 @@ provider "aws" {
 resource "aws_vpc" "awsvpc" {
     cidr_block= "108.0.0.0/16"
     tags={
-        Name="GIT_VPC"
+        Name="VPC"
     }  
 }
+
