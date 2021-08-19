@@ -4,13 +4,14 @@ pipeline{
         terraform 'Terraform-11'
     }
     stages{
-        
-
-
-
         stage("Terraform Init"){
                 steps{
                 sh 'terraform init'
+            }
+        }
+        stage("terraform workspace production"){
+            steps{
+                sh 'terraform workspace new production'
             }
         }
         stage("Terraform Apply"){
