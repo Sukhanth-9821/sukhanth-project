@@ -9,7 +9,7 @@ pipeline{
                 sh 'terraform init'
             }
         }
-        stage("terraform workspace production"){
+        stage("terraform workspace deletion"){
             steps{
                 sh 'terraform workspace delete *'
             }
