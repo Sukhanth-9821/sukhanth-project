@@ -11,7 +11,7 @@ pipeline{
         }
         stage("terraform workspace deletion"){
             steps{
-                sh 'terraform workspace delete *'
+                sh 'terraform workspace delete production'
             }
         }
         stage("terraform workspace production"){
