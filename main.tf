@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket = "terraform-statefile-sukhanth-project"
+    key    = "production/terraform.tfstates"
+    region = "ap-south-1"
+  }
+}
+
 provider "aws" {
     region="ap-south-1"
 }
