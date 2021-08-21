@@ -12,11 +12,11 @@ pipeline{
             }
         }
         
-        stage("terraform workspace production"){
-            steps{
-                sh 'terraform workspace new production'
-            }
-        }
+//         stage("terraform workspace production"){
+//             steps{
+//                 sh 'terraform workspace new production'
+//             }
+//         }
         stage("Terraform Apply"){
                 steps{
                 sh 'terraform apply --auto-approve'
