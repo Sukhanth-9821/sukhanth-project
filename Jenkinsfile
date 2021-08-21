@@ -6,15 +6,15 @@ pipeline{
     stages{
         stage("Terraform Init"){
                 steps{
-                sh 'terraform init'
+                sh 'terraform init  -input=true'
             }
         }
         
-        // stage("terraform workspace production"){
-        //     steps{
-        //         sh 'terraform workspace new production'
-        //     }
-        // }
+        stage("terraform workspace production"){
+            steps{
+                sh 'terraform workspace new production'
+            }
+        }
         stage("Terraform Apply"){
                 steps{
                 sh 'terraform apply --auto-approve'
